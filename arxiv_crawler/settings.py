@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for arxiv-crawler project
+# Scrapy settings for arxiv_crawler project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'arxiv-crawler'
+BOT_NAME = 'arxiv_crawler'
 
-SPIDER_MODULES = ['arxiv-crawler.spiders']
-NEWSPIDER_MODULE = 'arxiv-crawler.spiders'
+SPIDER_MODULES = ['arxiv_crawler.spiders']
+NEWSPIDER_MODULE = 'arxiv_crawler.spiders'
 LOG_LEVEL = 'CRITICAL'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'arxiv-crawler (+http://www.yourdomain.com)'
+#USER_AGENT = 'arxiv_crawler (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'arxiv-crawler.middlewares.TutorialSpiderMiddleware': 543,
+#    'arxiv_crawler.middlewares.TutorialSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'arxiv-crawler.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'arxiv_crawler.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'arxiv-crawler.pipelines.TutorialPipeline': 300,
+#    'arxiv_crawler.pipelines.TutorialPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

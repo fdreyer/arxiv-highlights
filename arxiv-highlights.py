@@ -7,6 +7,7 @@ Usage:
 
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
+from arxiv_crawler.spiders.arxiv_spider import ArxivSpider
 import contextlib, os, json, sys, argparse
 
 parser = argparse.ArgumentParser(description='Scrape data from arxiv and create top list of daily papers')
@@ -28,20 +29,27 @@ settings.set('FEED_FORMAT', 'json')
 settings.set('FEED_URI', args.filename)
 # create the crawler process
 process = CrawlerProcess(settings)
-
+spider  = ArxivSpider(filename=args.listings)
+ # get the listings
+arxivlist=''
+for x in spider.listings:
+    arxivlist+=x+', '
+arxivlist=arxivlist[:-2]
 
 # start the 'arxiv' spider.
-process.crawl('arxiv', filename=args.listings)
+process.crawl(spider)
 process.start() # the script will block here until the crawling is finished
 
+print()
 with open(args.filename) as data_file:    
     data = json.load(data_file)
 
 
-first=True
-print('\n# Starting ranked list of today\'s top '+str(args.ntop)+' on arxiv\n')
 sorted_data = sorted(data, key=lambda k: k['score'])
 
+print('\n# Starting ranked list of today\'s top '+
+      str(args.ntop)+' on '+arxivlist+'\n')
+first=True
 # loop over the first ntop best scored values
 for val in sorted_data[:-args.ntop:-1]:
     if (first):
