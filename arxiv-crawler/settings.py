@@ -13,13 +13,13 @@ BOT_NAME = 'arxiv-crawler'
 
 SPIDER_MODULES = ['arxiv-crawler.spiders']
 NEWSPIDER_MODULE = 'arxiv-crawler.spiders'
-
+LOG_LEVEL = 'CRITICAL'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'arxiv-crawler (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
