@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-"""Python script to scan arxiv papers and create a list of highlights
-based on author citation counts.
-Usage:
- ./arxiv-scan.py [-n ntop -f filename]
-"""
-
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 import contextlib, os, json, sys, argparse
@@ -40,8 +33,6 @@ with open(args.filename) as data_file:
 first=True
 print('\n# Starting ranked list of today\'s top '+str(args.ntop)+' on arxiv\n')
 sorted_data = sorted(data, key=lambda k: k['score'])
-
-# loop over the first ntop best scored values
 for val in sorted_data[:-args.ntop:-1]:
     if (first):
         first=False
