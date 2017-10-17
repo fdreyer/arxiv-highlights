@@ -5,7 +5,7 @@ recent arXiv papers of any given subject area, and create a list of
 likely interesting submissions.
 
 Simply run 
-> ./arxiv-highlights [-n ntop] [-f filename]
+> ./arxiv-highlights [-n ntop] [-o filename] [-a listings.txt]
 
 This will print out a selection of ntop articles.
 
