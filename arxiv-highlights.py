@@ -12,7 +12,7 @@ import contextlib, os, json, sys, argparse
 parser = argparse.ArgumentParser(description='Scrape data from arxiv and create top list of daily papers')
 
 parser.add_argument('-o',action='store',default='arxiv.json',dest='filename')
-parser.add_argument('-a',action='store',default='listings.txt',dest='listings')
+parser.add_argument('-a',action='store',default=None,dest='listings')
 parser.add_argument('-n',action='store',type=int,default=8,dest='ntop')
 
 args=parser.parse_args()
